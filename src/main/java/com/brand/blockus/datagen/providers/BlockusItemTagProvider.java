@@ -7,6 +7,7 @@ import com.brand.blockus.registry.tag.BlockusItemTags;
 import com.brand.blockus.utils.BlockChecker;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -83,6 +84,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
             .add(Items.DARK_OAK_PLANKS)
             .add(Items.MANGROVE_PLANKS)
             .add(Items.CHERRY_PLANKS)
+            .add(Items.PALE_OAK_PLANKS)
             .add(Items.BAMBOO_PLANKS)
             ;
 
@@ -204,5 +206,7 @@ public class BlockusItemTagProvider extends FabricTagProvider.ItemTagProvider {
 //        this.copy(new Identifier("promenade", "palm_logs"));
 
         // Conventional Item Tags
+        this.copy(ConventionalBlockTags.SMALL_FLOWERS, ConventionalItemTags.SMALL_FLOWERS);
+
     }
 }

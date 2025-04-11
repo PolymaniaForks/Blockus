@@ -1,6 +1,7 @@
 package com.brand.blockus.datagen.providers;
 
 import com.brand.blockus.Blockus;
+import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.bundles.*;
 import com.brand.blockus.registry.tag.BlockusBlockTags;
 import com.brand.blockus.utils.BlockChecker;
@@ -47,7 +48,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(CHISELED_ANDESITE_BRICKS)
             .add(CRACKED_ANDESITE_BRICKS)
             .add(POLISHED_ANDESITE_PILLAR)
-            ;
+            .add(ANDESITE_CIRCULAR_PAVING);
 
         this.getOrCreateTagBuilder(BlockTags.VIBRATION_RESONATORS)
             .addOptionalTag(BlockusBlockTags.AMETHYST_BLOCKS);
@@ -89,6 +90,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(bsswBundle(SMALL_BLUESTONE_BRICKS))
             .add(CHISELED_BLUESTONE)
             .add(CHISELED_BLUESTONE_PILLAR)
+            .add(CHISELED_BLUESTONE_BRICKS)
             .add(BLUESTONE_LINES);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.BRICKS_BLOCKS)
@@ -223,6 +225,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(bsswBundle(SMALL_LIMESTONE_BRICKS))
             .add(CHISELED_LIMESTONE)
             .add(CHISELED_LIMESTONE_PILLAR)
+            .add(CHISELED_LIMESTONE_BRICKS)
             .add(LIMESTONE_LINES)
             ;
 
@@ -236,6 +239,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(bsswBundle(SMALL_VIRIDITE_BRICKS))
             .add(CHISELED_VIRIDITE)
             .add(CHISELED_VIRIDITE_PILLAR)
+            .add(CHISELED_VIRIDITE_BRICKS)
             .add(VIRIDITE_LINES);
 
         this.getOrCreateTagBuilder(BlockusBlockTags.MAGMA_BRICKS)
@@ -252,6 +256,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(MARBLE_SQUARES)
             .add(bsswBundle(SMALL_MARBLE_BRICKS))
             .add(CHISELED_MARBLE_PILLAR)
+            .add(CHISELED_MARBLE_BRICKS)
             .add(CHISELED_MARBLE)
             .add(MARBLE_LINES)
             ;
@@ -484,6 +489,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(Blocks.DARK_OAK_PLANKS)
             .add(Blocks.MANGROVE_PLANKS)
             .add(Blocks.CHERRY_PLANKS)
+            .add(Blocks.PALE_OAK_PLANKS)
             .add(Blocks.BAMBOO_PLANKS)
 
 
@@ -731,6 +737,9 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
         // Conventional Block Tags
         this.getOrCreateTagBuilder(ConventionalBlockTags.GLASS_BLOCKS)
             .addOptionalTag(BlockusBlockTags.BEVELED_GLASS);
+
+        this.getOrCreateTagBuilder(ConventionalBlockTags.SMALL_FLOWERS)
+            .add(RAINBOW_ROSE);
     }
 
     public static Block[] bsswBundle(BSSWBundle block) {

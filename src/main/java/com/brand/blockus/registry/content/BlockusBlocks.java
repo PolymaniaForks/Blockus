@@ -15,6 +15,8 @@ import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.particle.EntityEffectParticleEffect;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.ColorCode;
@@ -115,6 +117,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle SMALL_LIMESTONE_BRICKS = new BSSWBundle("small_limestone_bricks", LIMESTONE_BRICKS.block);
     public static final BSSWBundle LIMESTONE_TILES = new BSSWBundle("limestone_tiles", LIMESTONE_BRICKS.block);
     public static final Block CHISELED_LIMESTONE = register("chiseled_limestone", createCopy(BlockusBlocks.LIMESTONE_BRICKS.block));
+    public static final Block CHISELED_LIMESTONE_BRICKS = registerPillar2("chiseled_limestone_bricks", BlockusBlocks.LIMESTONE_BRICKS.block);
     public static final Block CHISELED_LIMESTONE_PILLAR = registerPillar(BlockusBlocks.CHISELED_LIMESTONE);
     public static final Block LIMESTONE_SQUARES = register("limestone_squares", createCopy(BlockusBlocks.LIMESTONE_BRICKS.block));
     public static final Block LIMESTONE_LINES = registerPillar2("limestone_lines", BlockusBlocks.LIMESTONE_BRICKS.block);
@@ -127,6 +130,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle SMALL_MARBLE_BRICKS = new BSSWBundle("small_marble_bricks", MARBLE_BRICKS.block);
     public static final BSSWBundle MARBLE_TILES = new BSSWBundle("marble_tiles", MARBLE_BRICKS.block);
     public static final Block CHISELED_MARBLE = register("chiseled_marble", createCopy(BlockusBlocks.MARBLE_BRICKS.block));
+    public static final Block CHISELED_MARBLE_BRICKS = registerPillar2("chiseled_marble_bricks", BlockusBlocks.MARBLE_BRICKS.block);
     public static final Block CHISELED_MARBLE_PILLAR = registerPillar(BlockusBlocks.CHISELED_MARBLE);
     public static final Block MARBLE_SQUARES = register("marble_squares", createCopy(BlockusBlocks.MARBLE_BRICKS.block));
     public static final Block MARBLE_LINES = registerPillar2("marble_lines", BlockusBlocks.MARBLE_BRICKS.block);
@@ -139,6 +143,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle SMALL_BLUESTONE_BRICKS = new BSSWBundle("small_bluestone_bricks", BLUESTONE_BRICKS.block);
     public static final BSSWBundle BLUESTONE_TILES = new BSSWBundle("bluestone_tiles", BLUESTONE_BRICKS.block);
     public static final Block CHISELED_BLUESTONE = register("chiseled_bluestone", createCopy(BlockusBlocks.BLUESTONE_BRICKS.block));
+    public static final Block CHISELED_BLUESTONE_BRICKS = registerPillar2("chiseled_bluestone_bricks", BlockusBlocks.BLUESTONE_BRICKS.block);
     public static final Block CHISELED_BLUESTONE_PILLAR = registerPillar(BlockusBlocks.CHISELED_BLUESTONE);
     public static final Block BLUESTONE_SQUARES = register("bluestone_squares", createCopy(BlockusBlocks.BLUESTONE_BRICKS.block));
     public static final Block BLUESTONE_LINES = registerPillar2("bluestone_lines", BlockusBlocks.BLUESTONE_BRICKS.block);
@@ -151,6 +156,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final BSSWBundle SMALL_VIRIDITE_BRICKS = new BSSWBundle("small_viridite_bricks", VIRIDITE_BRICKS.block);
     public static final BSSWBundle VIRIDITE_TILES = new BSSWBundle("viridite_tiles", VIRIDITE_BRICKS.block);
     public static final Block CHISELED_VIRIDITE = register("chiseled_viridite", createCopy(BlockusBlocks.VIRIDITE_BRICKS.block));
+    public static final Block CHISELED_VIRIDITE_BRICKS = registerPillar2("chiseled_viridite_bricks", BlockusBlocks.VIRIDITE_BRICKS.block);
     public static final Block CHISELED_VIRIDITE_PILLAR = registerPillar(BlockusBlocks.CHISELED_VIRIDITE);
     public static final Block VIRIDITE_SQUARES = register("viridite_squares", createCopy(BlockusBlocks.VIRIDITE_BRICKS.block));
     public static final Block VIRIDITE_LINES = registerPillar2("viridite_lines", BlockusBlocks.VIRIDITE_BRICKS.block);
@@ -399,7 +405,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final AsphaltBundle PURPLE_ASPHALT = new AsphaltBundle(DyeColor.PURPLE);
     public static final AsphaltBundle MAGENTA_ASPHALT = new AsphaltBundle(DyeColor.MAGENTA);
     public static final AsphaltBundle PINK_ASPHALT = new AsphaltBundle(DyeColor.PINK);
-    public static final Block RAINBOW_ASPHALT = register("rainbow_asphalt", RainbowAsphalt::new, create().mapColor(DyeColor.BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool());
+    public static final Block RAINBOW_ASPHALT = AsphaltBundle.register("rainbow_asphalt", RainbowAsphalt::new, create().mapColor(DyeColor.BLUE).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5f, 6.0f).requiresTool());
 
     // Thatch
     public static final BSSWBundle THATCH = new BSSWBundle("thatch", Blocks.HAY_BLOCK, false);
@@ -426,7 +432,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block ENDER_BLOCK = register("ender_block", create().mapColor(MapColor.TERRACOTTA_GREEN).strength(5.0f, 6.0f));
     public static final Block ROTTEN_FLESH_BLOCK = register("rotten_flesh_block", create().mapColor(MapColor.TERRACOTTA_RED).strength(0.5f).sounds(BlockSoundGroup.SLIME));
     public static final Block MEMBRANE_BLOCK = register("membrane_block", create().mapColor(MapColor.TERRACOTTA_WHITE).strength(0.5f).sounds(BlockSoundGroup.SLIME));
-    public static final Block NETHER_STAR_BLOCK = registerGlint("nether_stars_block", NetherStarBlock::new, create().mapColor(MapColor.OFF_WHITE).strength(5.0f, 6.0f).requiresTool());
+    public static final Block NETHER_STAR_BLOCK = registerNetherStarBlock("nether_stars_block", NetherStarBlock::new, create().mapColor(MapColor.OFF_WHITE).strength(5.0f, 6.0f).requiresTool());
     public static final Block REDSTONE_SAND = register("redstone_sand", FallingRedstoneBlock::new, createCopy(Blocks.SAND).mapColor(MapColor.BRIGHT_RED));
     public static final Block LOVE_BLOCK = register("love_block", LoveBlock::new, create().mapColor(MapColor.PINK).strength(2, 6.0f).requiresTool());
     public static final Block WEIGHT_STORAGE_CUBE = register("weight_storage_cube", WeightStorageCubeBlock::new, create().mapColor(MapColor.IRON_GRAY).strength(0.1f, 6.0f));

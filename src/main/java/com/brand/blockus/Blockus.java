@@ -2,6 +2,7 @@ package com.brand.blockus;
 
 import com.brand.blockus.itemgroups.BlockusItemGroups;
 import com.brand.blockus.itemgroups.content.*;
+import com.brand.blockus.registry.BlockusAliases;
 import com.brand.blockus.registry.content.BlockusBlocks;
 import com.brand.blockus.registry.content.BlockusEntities;
 import com.brand.blockus.registry.content.BlockusItems;
@@ -49,6 +50,7 @@ public class Blockus implements ModInitializer {
 
         Instance.init();
         BlockusWorldgenFeatures.registerConfiguredFeature();
+        BlockusAliases.init();
 
         Registries.ITEM.addAlias(id("white_oak_planks"), Identifier.ofVanilla("pale_oak_planks"));
         Registries.BLOCK.addAlias(id("white_oak_planks"), Identifier.ofVanilla("pale_oak_planks"));

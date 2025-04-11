@@ -1,8 +1,7 @@
-* Updated to 1.21.4
-* Added Herringbone Pale Oak Planks, Mossy Pale Oak Planks, Pale Oak Mosaic, Pale Oak Timber Frames, Pale Oak Grate, Pale Oak Lattice, Pale Oak Small Logs & Pale Oak Posts
-* Added Pale Oak & Pale Moss Small Hedges
-* Added Large Potted Pale Oak
-* Added Large Resin Bricks, Herringbone Resin Bricks & Resin Brick Pillar
-* Changed Mossy Planks textures
-* Changed Dark Oak Grate/Lattice texture
-* Updated Nether Bricks textures
+* Updated to 1.21.5
+* Added fallen white oak in biomes with white oak trees.
+* Leaf litters now generate under every naturally generated white oak trees, even in plains.
+* Wandering Trader now sells 8 White Oak Logs as a special offer.
+* Rainbow Rose now spread using bone meal.
+* Iron blocks now makes iron sounds.
+* Changed Rainbow Petals ID from `rainbow_petal` to `rainbow_petals`
