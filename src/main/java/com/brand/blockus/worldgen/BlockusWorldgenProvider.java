@@ -52,8 +52,6 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         entries.add(registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE), FALLEN_WHITE_OAK);
         entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), PLACED_FALLEN_WHITE_OAK);
 
-        entries.add(registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE), LEGACY_OAK);
-        entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), LEGACY_OAK_CHECKED);
 
         entries.add(registries.getOrThrow(RegistryKeys.CONFIGURED_FEATURE), RAINBOW_ROSE);
         entries.add(registries.getOrThrow(RegistryKeys.PLACED_FEATURE), PLACED_RAINBOW_ROSE);
@@ -72,7 +70,6 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         ConfiguredFeatures.register(registerable, WHITE_OAK_LEAF_LITTER, Feature.TREE, white_oak().decorators(ImmutableList.of(placeOnGroundTreeDecorator, placeOnGroundTreeDecorator2)).build());
         ConfiguredFeatures.register(registerable, FALLEN_WHITE_OAK, Feature.FALLEN_TREE, fallen(BlockusBlocks.WHITE_OAK_LOG, 4, 9).build());
 
-        ConfiguredFeatures.register(registerable, LEGACY_OAK, Feature.TREE, legacy_oak().build());
         ConfiguredFeatures.register(registerable, RAINBOW_ROSE, Feature.FLOWER, new RandomPatchFeatureConfig(12, 7, 2, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK, new SimpleBlockFeatureConfig(BlockStateProvider.of(BlockusBlocks.RAINBOW_ROSE)))));
     }
 
@@ -102,7 +99,6 @@ public class BlockusWorldgenProvider extends FabricDynamicRegistryProvider {
         PlacedFeatures.register(registerable, PLACED_FALLEN_WHITE_OAK, configuredFeatures.getOrThrow(FALLEN_WHITE_OAK), VegetationPlacedFeatures.treeModifiersWithWouldSurvive(PlacedFeatures.createCountExtraModifier(0, 0.0125F, 1), BlockusBlocks.WHITE_OAK_SAPLING));
 
         // legacy oak
-        PlacedFeatures.register(registerable, LEGACY_OAK_CHECKED, configuredFeatures.getOrThrow(LEGACY_OAK), PlacedFeatures.wouldSurvive(BlockusBlocks.LEGACY_SAPLING));
 
         // rainbow rose
         PlacedFeatures.register(registerable, PLACED_RAINBOW_ROSE, configuredFeatures.getOrThrow(RAINBOW_ROSE), SquarePlacementModifier.of(), PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());

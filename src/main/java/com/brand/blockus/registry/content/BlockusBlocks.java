@@ -304,8 +304,7 @@ public class BlockusBlocks extends BlockFactory {
     public static final Block STRIPPED_WHITE_OAK_LOG = registerPillar2("stripped_white_oak_log", WHITE_OAK_LOG);
     public static final Block WHITE_OAK_WOOD = registerPillar2("white_oak_wood", WHITE_OAK_LOG);
     public static final Block STRIPPED_WHITE_OAK_WOOD = registerPillar2("stripped_white_oak_wood", WHITE_OAK_LOG);
-    public static final Block WHITE_OAK_LEAVES = register("white_oak_leaves", LeavesBlock::new, createCopy(Blocks.OAK_LEAVES).mapColor(MapColor.ORANGE).pistonBehavior(PistonBehavior.DESTROY).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never));
-
+    public static final Block WHITE_OAK_LEAVES = register("white_oak_leaves", (settings) -> new UntintedParticleLeavesBlock(0.01F, EntityEffectParticleEffect.create(ParticleTypes.TINTED_LEAVES, 14061641), settings), createCopy(Blocks.OAK_LEAVES).mapColor(MapColor.ORANGE).pistonBehavior(PistonBehavior.DESTROY).allowsSpawning(BlockusBlocks::canSpawnOnLeaves).suffocates(BlockusBlocks::never).blockVision(BlockusBlocks::never));
     // Mosaics
     public static final BSSWBundle OAK_MOSAIC = new BSSWBundle("oak_mosaic", Blocks.OAK_PLANKS, false);
     public static final BSSWBundle SPRUCE_MOSAIC = new BSSWBundle("spruce_mosaic", Blocks.SPRUCE_PLANKS, false);

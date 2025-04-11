@@ -48,7 +48,7 @@ public class BlockusBlockTagProvider extends FabricTagProvider.BlockTagProvider 
             .add(CHISELED_ANDESITE_BRICKS)
             .add(CRACKED_ANDESITE_BRICKS)
             .add(POLISHED_ANDESITE_PILLAR)
-            .add(ANDESITE_CIRCULAR_PAVING);
+            ;
 
         this.getOrCreateTagBuilder(BlockTags.VIBRATION_RESONATORS)
             .addOptionalTag(BlockusBlockTags.AMETHYST_BLOCKS);

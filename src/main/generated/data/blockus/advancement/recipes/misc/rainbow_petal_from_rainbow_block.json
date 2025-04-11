@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_glow_ink_sac": {
+    "has_rainbow_block": {
       "conditions": {
         "items": [
           {
-            "items": "minecraft:glow_ink_sac"
+            "items": "blockus:rainbow_block"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "blockus:rainbow_neon"
+        "recipe": "minecraft:rainbow_petal_from_rainbow_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_glow_ink_sac"
+      "has_rainbow_block"
     ]
   ],
   "rewards": {
     "recipes": [
-      "blockus:rainbow_neon"
+      "minecraft:rainbow_petal_from_rainbow_block"
     ]
   }
 }

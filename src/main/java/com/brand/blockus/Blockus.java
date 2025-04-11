@@ -54,6 +54,7 @@ public class Blockus implements ModInitializer {
 
         Registries.ITEM.addAlias(id("white_oak_planks"), Identifier.ofVanilla("pale_oak_planks"));
         Registries.BLOCK.addAlias(id("white_oak_planks"), Identifier.ofVanilla("pale_oak_planks"));
+        Registries.BLOCK.addAlias(id("rainbow_petals"), id("rainbow_rose"));
         Registries.BLOCK.addAlias(id("rainbow_petal"), id("rainbow_rose"));
     }
 
