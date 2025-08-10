@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_rainbow_petals": {
+    "has_rainbow_petal": {
       "conditions": {
         "items": [
           {
-            "items": "blockus:rainbow_petals"
+            "items": "blockus:rainbow_petal"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_rainbow_petals"
+      "has_rainbow_petal"
     ]
   ],
   "rewards": {
